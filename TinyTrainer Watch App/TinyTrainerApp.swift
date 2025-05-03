@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+
 @main
 struct TinyTrainer_Watch_AppApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+    @StateObject private var healthManager = HealthManager()
+        
+        var body: some Scene {
+            WindowGroup {
+                ContentView().environmentObject(healthManager)
+            }
         }
-    }
 }
+
+
